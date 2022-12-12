@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#app { // stylelint-disable-line selector-max-id
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background-color: #181b44;
+    color: #ffffff;
+    font-size: 16px;
+    font-family:
+        Lato,
+        sans-serif;
+    line-height: 24px;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+p {
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+a,
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 942px;
+    margin: 0 auto;
+    padding: 32px 10px;
+
+    @media (min-width: $tablet) {
+        padding: 64px 48px;
+    }
+}
+
+.section-title {
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 48px;
+
+    @media (min-width: $tablet) {
+        font-size: 96px;
+        line-height: 120px;
+    }
+}
+
+.block-title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+
+    @media (min-width: $tablet) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (min-width: $desktop) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+.block-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (min-width: $tablet) {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    @media (min-width: $desktop) {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
