@@ -24,7 +24,7 @@ export default {
     props: {
         shareUrl: {
             type: String,
-            default: 'https://web.dev/', // TODO вставить валидную ссылку
+            default: '', // TODO вставить валидную ссылку
         },
     },
     methods: {
@@ -33,7 +33,7 @@ export default {
                 navigator
                     .share({
                         title: 'Итоги 2022 года',
-                        text: 'Зажгите ёлку и посмотрите достижения за 2022 год',
+                        text: 'Встречаем новый год вместе',
                         url: this.shareUrl,
                     })
                     .then()
