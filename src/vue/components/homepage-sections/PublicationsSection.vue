@@ -17,7 +17,7 @@
                         <span class="publications-table__row-title">
                             {{ item.text }}
                         </span>
-                        <span class="publications-table__row-counter">{{ item.value }} {{ pluralizedText(item.value) }}</span>
+                        <span class="publications-table__row-counter">{{ counterText(item.value) }}</span>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { pluralize } from '@utils/utils.js';
+import { pluralize, maskNumber } from '@utils/utils.js';
 
 export default {
     name: 'PublicationsSection',
@@ -42,8 +42,11 @@ export default {
         },
     },
     methods: {
-        pluralizedText(value) {
-            return pluralize(value, ['публикация', 'публикации', 'публикаций']);
+        counterText(value) {
+            const counter = maskNumber(value);
+            const text = pluralize(value, ['публикация', 'публикации', 'публикаций']);
+
+            return `${counter} ${text}`;
         },
     },
 };

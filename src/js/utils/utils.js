@@ -16,3 +16,16 @@ export const pluralize = (number, titles) => {
             : [2, 0, 1, 1, 1, 2][(numberAbs % 10 < 5) ? numberAbs % 10 : 5]
     ];
 };
+
+/**
+ * Возвращает целочисленное значение в виде строки с пробелами
+ * pluralize(100000) // 100 000
+ * @param {number} number
+ * @returns string
+ */
+export const maskNumber = number => {
+    const maskedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+
+    return maskedNumber;
+
+};

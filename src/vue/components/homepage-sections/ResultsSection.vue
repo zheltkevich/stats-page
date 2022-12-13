@@ -10,7 +10,7 @@
                         v-for="(minicard, i) in minicards"
                         :key="i"
                         class="results-section__results-minicard results-minicard">
-                        <span class="results-minicard__result-counter">{{ minicard.value }}</span>
+                        <span class="results-minicard__result-counter">{{ maskNumber(minicard.value) }}</span>
                         <span class="results-minicard__text">{{ minicard.text }}</span>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                                 :class="[item.type]">
                             </i>
                             <div class="results-card__result-info-wrapper">
-                                <span class="results-card__result-counter">{{ item.value }}</span>
+                                <span class="results-card__result-counter">{{ maskNumber(item.value) }}</span>
                                 <span class="results-card__result-text">{{ item.text }}</span>
                             </div>
                         </div>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import { maskNumber } from '@utils/utils.js';
+
 export default {
     name: 'ResultsSection',
     props: {
@@ -74,6 +76,11 @@ export default {
             const dataStats = this.stats.find(item => item.type === 'data');
 
             return { ...dataStats };
+        },
+    },
+    methods: {
+        maskNumber(number) {
+            return maskNumber(number);
         },
     },
 };

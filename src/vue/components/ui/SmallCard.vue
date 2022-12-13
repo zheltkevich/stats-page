@@ -3,7 +3,7 @@
         class="small-card"
         :class="[blockType]">
         <span class="small-card__title block-title">
-            {{ card.statCount }}
+            {{ computedStatCount }}
         </span>
         <span class="small-card__description block-text">
             {{ card.statName }}
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { maskNumber } from '@utils/utils.js';
+
 export default {
     name: 'SmallCard',
     props: {
@@ -22,6 +24,11 @@ export default {
         blockType: {
             type: String,
             default: '',
+        },
+    },
+    computed: {
+        computedStatCount() {
+            return maskNumber(this.card.statCount);
         },
     },
 };

@@ -30,7 +30,7 @@
                     class="template-achievement__image template-achievement__image--background template-achievement__image--3"></div>
                 <span
                     v-else-if="!firstCircle && !rotated"
-                    class="template-achievement__counter">{{ achievement.value }} {{ pluralizedCounterText }}</span>
+                    class="template-achievement__counter">{{ counterText }}</span>
             </transition>
         </div>
         <span
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { pluralize } from '@utils/utils.js';
+import { pluralize, maskNumber } from '@utils/utils.js';
 import StarsExplosion from '@components/images/StarsExplosion.vue';
 
 export default {
@@ -116,8 +116,11 @@ export default {
         hasBadge() {
             return !this.firstCircle;
         },
-        pluralizedCounterText() {
-            return pluralize(this.achievement.value, ['раз', 'раза', 'раз']);
+        counterText() {
+            const counter = maskNumber(this.achievement.value);
+            const text = pluralize(this.achievement.value, ['раз', 'раза', 'раз']);
+
+            return `${counter} ${text}`;
         },
     },
     methods: {
@@ -221,10 +224,11 @@ export default {
         &--background {
             top: unset;
             left: unset;
-            width: 70%;
-            height: 70%;
+            width: 80%;
+            height: 80%;
             background-color: #cccff9;
             background-position: center;
+            background-size: 64%;
             transform: rotateY(180deg);
         }
     }

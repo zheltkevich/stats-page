@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <router-view :key="$route.path" />
+        <router-view />
     </transition>
 </template>
 

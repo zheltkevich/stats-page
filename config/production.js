@@ -27,6 +27,10 @@ const pluginsConfig = [
                 from: './public/favicon.ico',
                 to: '.',
             },
+            {
+                from: './public/preview.png',
+                to: '.',
+            },
         ],
     }),
     new MiniCssExtractPlugin({
@@ -81,7 +85,7 @@ const optimizationConfig = {
     ],
 };
 const outputConfig = {
-    publicPath: 'auto', // TODO '/' for all (need .env)
+    publicPath: 'auto',
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].js',
     sourceMapFilename: '[id][name].map',

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { pluralize } from '@utils/utils.js';
+import { maskNumber, pluralize } from '@utils/utils.js';
 
 export default {
     name: 'LargeCard',
@@ -33,7 +33,7 @@ export default {
                 case 'courses':
                     return `Состоим на\u00A0${this.card.statCount}%\u00A0из\u00A0вас`;
                 case 'content':
-                    return `${this.card.statCount} ${pluralize(this.card.statCount, ['символ', 'символа', 'символов'])}`;
+                    return `${maskNumber(this.card.statCount)} ${pluralize(this.card.statCount, ['символ', 'символа', 'символов'])}`;
                 case 'templates':
                     return this.computedTemplatesCardTitle;
                 default:
@@ -43,9 +43,9 @@ export default {
         computedTemplatesCardTitle() {
             switch (this.card.class) {
                 case 'top-template':
-                    return `Использован ${this.card.statCount}\u00A0${pluralize(this.card.statCount, ['раз', 'раза', 'раз'])}`;
+                    return `Использован ${maskNumber(this.card.statCount)}\u00A0${pluralize(this.card.statCount, ['раз', 'раза', 'раз'])}`;
                 case 'summ-templates':
-                    return `${this.card.statCount} ${pluralize(this.card.statCount, ['шаблон', 'шаблона', 'шаблонов'])}`;
+                    return `${maskNumber(this.card.statCount)} ${pluralize(this.card.statCount, ['шаблон', 'шаблона', 'шаблонов'])}`;
                 default:
                     return 'Title';
             }
