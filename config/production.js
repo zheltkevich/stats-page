@@ -29,7 +29,7 @@ const pluginsConfig = [
             },
             {
                 from: './public/preview.png',
-                to: '.',
+                to: 'assets/',
             },
         ],
     }),

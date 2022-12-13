@@ -6,27 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
-    <meta name=description content="Страница статистики">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.title %>">
-    <meta itemprop="name" content="Итоги 2022 года">
-    <meta itemprop="description" content="Встречаем новый год вместе">
-    <meta itemprop="image" content="https://unsplash.com/photos/RrhhzitYizg">
     <link rel="icon" href="<%= htmlWebpackPlugin.options.url %>favicon.ico">
+
+    <!-- Page Information -->
     <title>
         <%= htmlWebpackPlugin.options.title %>
     </title>
+    <meta name=description content="Страница статистики">
+    <meta name="copyright" content="CoursEditor">
+
+    <!-- Schema.org Microdata -->
+    <meta itemprop="name" content="Итоги 2022 года">
+    <meta itemprop="description" content="Встречаем новый год вместе">
+    <meta itemprop="image" content="/assets/preview.png">
+
+    <!-- Facebook / OpenGraph -->
+    <meta property="og:title" content="Итоги 2022 года">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="/assets/preview.png">
+    <meta property="og:description" content="Встречаем новый год вместе">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:site" value="">
+    <meta name="twitter:url" value="">
+    <meta name="twitter:title" value="Итоги 2022 года">
+    <meta name="twitter:description" value="Встречаем новый год вместе">
+    <meta name="twitter:image" value="/assets/preview.png">
 </head>
 
 <body>
-    <div itemscope itemtype="http://schema.org/Event" style="display: none;">
-        <div>
-            <h1 itemprop="name">Итоги 2022 года</h1>
-            <span itemprop="description">Встречаем новый год вместе</span>
-            <img src="preview.png" alt="Встречаем новый год вместе" itemprop="image" />
-        </div>
-    </div>
     <div id="app"></div>
 </body>
 
