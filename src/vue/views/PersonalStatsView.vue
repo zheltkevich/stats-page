@@ -284,6 +284,10 @@ export default {
             }
         }
     }
+
+    &__congratulatory-block {
+        max-width: 100%;
+    }
 }
 
 .congratulatory-block {
@@ -338,6 +342,7 @@ export default {
         flex-direction: column;
         row-gap: 16px;
         justify-content: space-between;
+        width: 100%;
         padding: 16px;
         border-radius: 16px;
         background-color: #181b44;
