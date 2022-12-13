@@ -4,13 +4,16 @@
         v-bind="templateAchievementData"
         @click="rotateAchievement">
         <div class="template-achievement__wrapper">
-            <div
+            <img
+                v-if="!firstCircle"
                 class="template-achievement__circle"
-                :class="{
-                    rotated,
-                    'first-circle': firstCircle,
-                }">
-            </div>
+                src="@images/achievement-circle-white.svg"
+                :alt="achievement.text">
+            <img
+                v-else
+                class="template-achievement__circle"
+                src="@images/achievement-circle-blue.svg"
+                alt="Эдди">
             <transition name="fade">
                 <StarsExplosion v-if="firstCircle && rotated" />
                 <div
@@ -138,7 +141,6 @@ export default {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    aspect-ratio: 1/1;
 
     @media (min-width: $tablet) {
         font-size: 40px;
@@ -185,30 +187,6 @@ export default {
         display: flex;
         width: 100%;
         height: 100%;
-        transition: 0.3s ease;
-        transition-property: background-image;
-
-        &:not(.first-circle) {
-            background-image: url("@images/achievement-circle-white.svg");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-
-            &.rotated {
-                background-image: url("@images/achievement-circle-white-rotated.svg");
-            }
-        }
-
-        &.first-circle {
-            background-image: url("@images/achievement-circle-blue.svg");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-
-            &.rotated {
-                background-image: url("@images/achievement-circle-blue-rotated.svg");
-            }
-        }
     }
 
     &__image {
