@@ -133,6 +133,12 @@ export default {
             totalStats: TOTAL_STATS.stats,
         };
     },
+    mounted() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant',
+        });
+    },
 };
 </script>
 

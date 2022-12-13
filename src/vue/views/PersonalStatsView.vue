@@ -170,6 +170,12 @@ export default {
     created() {
         document.documentElement.style.overflow = 'auto';
     },
+    mounted() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant',
+        });
+    },
 };
 </script>
 
