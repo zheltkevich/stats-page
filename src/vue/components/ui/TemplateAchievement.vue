@@ -4,16 +4,13 @@
         v-bind="templateAchievementData"
         @click="rotateAchievement">
         <div class="template-achievement__wrapper">
-            <img
-                v-if="!firstCircle"
+            <div
                 class="template-achievement__circle"
-                src="@images/achievement-circle-white.svg"
-                :alt="achievement.text">
-            <img
-                v-else
-                class="template-achievement__circle"
-                src="@images/achievement-circle-blue.svg"
-                alt="Эдди">
+                :class="{
+                    rotated,
+                    'first-circle': firstCircle,
+                }">
+            </div>
             <transition name="fade">
                 <StarsExplosion v-if="firstCircle && rotated" />
                 <div
@@ -141,6 +138,7 @@ export default {
     width: 100%;
     height: 100%;
     cursor: pointer;
+    aspect-ratio: 1/1;
 
     @media (min-width: $tablet) {
         font-size: 40px;
@@ -187,6 +185,30 @@ export default {
         display: flex;
         width: 100%;
         height: 100%;
+        transition: 0.3s ease;
+        transition-property: background-image;
+
+        &:not(.first-circle) {
+            background-image: url("@images/achievement-circle-white.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            &.rotated {
+                background-image: url("@images/achievement-circle-white-rotated.svg");
+            }
+        }
+
+        &.first-circle {
+            background-image: url("@images/achievement-circle-blue.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            &.rotated {
+                background-image: url("@images/achievement-circle-blue-rotated.svg");
+            }
+        }
     }
 
     &__image {
@@ -224,8 +246,8 @@ export default {
         &--background {
             top: unset;
             left: unset;
-            width: 80%;
-            height: 80%;
+            width: 70%;
+            height: 70%;
             background-color: #cccff9;
             background-position: center;
             background-size: 64%;
@@ -237,6 +259,13 @@ export default {
         position: absolute;
         top: 50%;
         left: 50%;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        height: 70%;
+        background-color: #525ce2;
         font-weight: 400;
         font-size: 28px;
         line-height: 32px;
