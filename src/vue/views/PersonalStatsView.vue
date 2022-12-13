@@ -23,14 +23,14 @@
                         </h2>
                         <div class="congratulatory-block__icon"></div>
                     </header>
-                    <div class="congratulatory-block__card">
+                    <router-link
+                        :to="{ name: 'home' }"
+                        class="congratulatory-block__card">
                         <SnowBackground class="congratulatory-block__snow-background" />
                         <h3 class="congratulatory-block__card-title block-title">
                             Увидимся в&nbsp;новом году!
                         </h3>
-                        <router-link
-                            class="congratulatory-block__link"
-                            :to="{ name: 'home' }">
+                        <span class="congratulatory-block__link">
                             <svg
                                 class="congratulatory-block__link-icon"
                                 width="40"
@@ -43,8 +43,8 @@
                                     fill="white" />
                             </svg>
                             <span class="congratulatory-block__link-text">Итоги 2022</span>
-                        </router-link>
-                    </div>
+                        </span>
+                    </router-link>
                 </article>
             </div>
             <aside class="personal-stats-view__aside">
@@ -353,11 +353,19 @@ export default {
         background-position: 95% 100%;
         background-size: 26%;
         background-repeat: no-repeat;
+        color: #ffffff;
+        text-decoration: none;
         aspect-ratio: 16/9;
 
         @media (min-width: $tablet) {
             padding: 32px;
             border-radius: 32px;
+        }
+
+        &:hover {
+            .congratulatory-block__link-icon {
+                transform: rotate(45deg);
+            }
         }
     }
 
@@ -397,12 +405,6 @@ export default {
             font-size: 24px;
             line-height: 32px;
             column-gap: 16px;
-        }
-
-        &:hover {
-            .congratulatory-block__link-icon {
-                transform: rotate(45deg);
-            }
         }
     }
 }
