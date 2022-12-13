@@ -18,7 +18,6 @@ const printMessage = () => {
     else if (isDevelopmentMode) return '######################\n** Development mode **\n######################\n';
 };
 
-console.log(process.env); // eslint-disable-line no-console
 console.info(printMessage()); // eslint-disable-line no-console
 
 // Settings
