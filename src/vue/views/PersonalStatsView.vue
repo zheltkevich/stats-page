@@ -237,6 +237,7 @@ export default {
 
         @media (min-width: $tablet) {
             flex-basis: 280px;
+            max-width: 280px;
         }
 
         @media (min-width: $desktop-s) {
@@ -245,6 +246,7 @@ export default {
 
         @media (min-width: $desktop) {
             flex-basis: 302px;
+            max-width: 302px;
         }
     }
 
@@ -254,6 +256,7 @@ export default {
         top: 32px;
         display: flex;
         align-self: flex-start;
+        max-width: 100%;
 
         @media (min-width: $desktop-s) {
             position: sticky;

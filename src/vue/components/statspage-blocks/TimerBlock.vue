@@ -4,17 +4,19 @@
             Скоро праздник!
         </h2>
         <p class="timer-block__description block-text">
-            До нового года осталось совсем немного :
+            До нового года осталось совсем немного:
         </p>
         <div class="timer-block__timer">
             <div class="timer-block__counter-wrapper">
                 <span class="timer-block__counter timer-block__counter--days">{{ displayDays }}</span>
                 <span class="timer-block__counter-text">{{ daysText }}</span>
             </div>
+            <div class="timer-block__delimeter"></div>
             <div class="timer-block__counter-wrapper">
                 <span class="timer-block__counter timer-block__counter--hours">{{ displayHours }}</span>
                 <span class="timer-block__counter-text">{{ hoursText }}</span>
             </div>
+            <div class="timer-block__delimeter"></div>
             <div class="timer-block__counter-wrapper">
                 <span class="timer-block__counter timer-block__counter--minutes">{{ displayMinutes }}</span>
                 <span class="timer-block__counter-text">{{ minutesText }}</span>
@@ -125,7 +127,24 @@ export default {
     &__timer {
         display: flex;
         justify-content: space-between;
-        column-gap: 8px;
+        margin-top: auto;
+    }
+
+    &__delimeter {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 64px;
+        background-image: url("@images/timer-delimeter.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media (min-width: $desktop) {
+            width: 20px;
+            height: 66px;
+        }
     }
 
     &__counter-wrapper {
@@ -154,15 +173,15 @@ export default {
         line-height: 32px;
 
         @media (min-width: $tablet) {
-            width: 64px;
-            height: 64px;
+            width: 62px;
+            height: 62px;
             font-size: 32px;
             line-height: 40px;
         }
 
         @media (min-width: $desktop) {
-            width: 74px;
-            height: 74px;
+            width: 66px;
+            height: 66px;
             font-size: 40px;
             line-height: 48px;
         }
