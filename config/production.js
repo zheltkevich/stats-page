@@ -17,7 +17,7 @@ const devServerConfig = {
 const pluginsConfig = [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '../public/index.html'),
-        title: 'Итоги 2022 года',
+        title: 'Итоги года вместе с Course Editor 2022',
         alwaysWriteToDisk: true,
     }),
     new VueLoaderPlugin(),

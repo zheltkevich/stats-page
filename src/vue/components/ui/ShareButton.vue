@@ -32,8 +32,8 @@ export default {
             if (navigator.share) {
                 navigator
                     .share({
-                        title: 'Итоги 2022 года',
-                        text: 'Встречаем новый год вместе',
+                        title: 'Итоги года вместе с Course Editor 2022',
+                        text: 'Course Editor подводит итоги 2022 года вместе с вами. Спасибо за этот чудесный год. Пусть следующий будет еще лучше ❤️',
                         url: this.shareUrl,
                     })
                     .then()
