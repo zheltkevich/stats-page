@@ -53,7 +53,7 @@ export default {
         computedDescription() {
             switch (this.blockType) {
                 case 'courses':
-                    return `Созданные вами курсы составляют ${this.card.statCount}%\u00A0от\u00A0всех курсов CoursEditor`;
+                    return `Созданные вами курсы составляют ${this.card.statCount}%\u00A0от\u00A0всех курсов Course Editor`;
                 case 'content':
                     return 'напечатано вашими руками';
                 case 'templates':

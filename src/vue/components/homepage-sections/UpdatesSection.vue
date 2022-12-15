@@ -2,7 +2,7 @@
     <section class="updates-section">
         <div class="updates-section__container container">
             <h2 class="updates-section__title section-title">
-                150+ обновлений CourseEditor
+                150+ обновлений Course Editor
             </h2>
             <div class="updates-section__button-container">
                 <ShowVideoButton
